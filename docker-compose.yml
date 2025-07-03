@@ -1,0 +1,54 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./server
+    container_name: hatou-backend
+    ports:
+      - "9000:9000"
+    depends_on:
+      - mongo
+      - mysql
+    environment:
+      - PORT=9000
+      - BASE_URL=http://localhost:9000
+      - MONGO_URI=mongodb://mongo:27017/hatoutouch
+      - JWT_SECRET=3b241f3dab417a4610fb1f1e824ede3a5be95b877667869e38131484c9e5329f
+      - JWT_EXPIRATION=7d
+      - DB_NAME=hatoutouch_db
+      - DB_USER=hatoutouchuser
+      - DB_PASS=HatouTouch75018!
+      - DB_HOST=mysql
+      - MAIL_USER=hatoutouch@gmail.com
+      - MAIL_PASS=wqad mklu ljzd gzhk
+   
+    # volumes:
+    #   - ./server:/app:cached
+    restart: unless-stopped
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    restart: unless-stopped
+
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: hatoutouch_db
+      MYSQL_USER: hatoutouchuser
+      MYSQL_PASSWORD: HatouTouch75018!
+    volumes:
+      - mysql-data:/var/lib/mysql
+    restart: unless-stopped
+
+volumes:
+  mongo-data:
+  mysql-data:

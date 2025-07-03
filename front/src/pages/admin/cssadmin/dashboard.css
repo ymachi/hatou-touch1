@@ -1,0 +1,333 @@
+/*************** STRUCTURE GLOBALE ***************/
+.admin-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 20rem;
+  background-color: #f1eeeb;
+  padding-top: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+.content {
+  margin-left: 20rem;
+  width: calc(100% - 20rem);
+  padding: 2rem;
+  background-color: white;
+}
+
+/*********************** NAV BAR *********************/
+.logo {
+  height: 6rem;
+}
+
+.slogan {
+  border-bottom: 2px solid white;
+  font-family: 'Brush Script MT', cursive;
+}
+
+.viewer-admin {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-admin {
+  padding: 1.5rem;
+  text-decoration: none;
+  color: #73655c;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.link-admin:hover {
+  background-color: #e1dcd5;
+  color: #2c0a11;
+}
+
+.icofont-duotone.icofont-reply {
+  font-size: 4rem;
+  text-decoration: none;
+  color: white;
+  padding: 2rem;
+}
+.link-admin.retour {
+  font-style: italic;
+  color: #4a3e36;
+}
+
+/**************** TITRES *********************/
+h1 {
+  padding-top: 2rem;
+  text-align: center;
+  color: #2F1E0E;
+}
+
+h2 {
+  text-align: center;
+}
+
+/**************** TABLEAUX MODERNES *********************/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e1dcd5;
+  font-family: 'Georgia', serif;
+  margin-bottom: 2rem;
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+thead th {
+  background-color: #e1dcd5;
+  color: #2f1e0e;
+  font-weight: bold;
+  padding: 1em;
+  border: 1px solid #e1dcd5;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+tbody td {
+  padding: 1em;
+  border: 1px solid #f1eeeb;
+  color: #2f1e0e;
+  font-size: 1rem;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f7f3f1;
+}
+
+tbody tr:hover {
+  background-color: #f1eeeb;
+}
+
+/**************** BOUTONS *********************/
+button {
+  padding: 1rem;
+}
+
+.button-action {
+  border: none;
+  background-color: transparent;
+  color: #b02e2e;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.button-action:hover {
+  color: #7a0e0e;
+  text-decoration: underline;
+}
+
+.button-action .nav-action {
+  text-decoration: none;
+  color: #2c0a11;
+}
+
+/**************** FORMULAIRES *********************/
+.add-dashboard {
+  text-align: center;
+  background-color: #facfd5;
+  border-radius: 7px;
+  padding: 2rem;
+  margin: auto;
+  margin-bottom: 2rem;
+}
+
+.add-dashboard input,
+input[type="file"] {
+  width: 100%;
+  border: 1px solid #facfd5;
+  border-radius: 5px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.add-dashboard input[type="submit"] {
+  transition: all 1s;
+  width: 50%;
+  margin: 3rem auto 0 auto;
+  background-color: #2c0a11;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.6rem;
+  letter-spacing: .3rem;
+  padding: 1rem 3rem;
+}
+
+.add-dashboard input[type="submit"]:hover {
+  background-color: white;
+  color: #2c0a11;
+  border: 2px solid #2c0a11;
+}
+
+/**************** IMAGES *********************/
+.img-responsive {
+  width: 100%;
+}
+
+.img-responsive-dashboard {
+  max-width: 20rem;
+}
+
+/**************** GALERIE *********************/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2rem;
+  background-color: #f1eeeb;
+  padding: 3rem;
+  border-radius: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+.intro-gallery {
+  text-align: center;
+  padding: 2rem;
+  color: #2c0a11;
+}
+
+.title-gallery {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2F1E0E;
+  margin-bottom: 1rem;
+}
+
+/**************** BURGER MENU *********************/
+.burger-menu {
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: #73655c;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  display: none;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+/**************** RESPONSIVE (MOBILE / TABLETTE) *********************/
+@media screen and (max-width: 768px) {
+  .admin-page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 70%;
+    transform: translateX(-100%);
+    height: 100vh;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  .users,
+  .avis,
+  .orders,
+  .devis,
+  .boxs {
+    overflow-x: auto;
+    table-layout: auto;
+  }
+
+  th,
+  td {
+    padding: 0.5em;
+    font-size: 0.9em;
+  }
+}
+
+/************ SCROLL HORIZONTAL POUR TABLE RESPONSIVE ************/
+.table-container {
+  overflow-x: auto;
+}
+
+/************ SELECT STATUT COULEUR ************/
+.status-select {
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.status-select.pending {
+  background-color: #fff9e6;
+  color: #b58b00;
+}
+
+.status-select.accepted {
+  background-color: #e3f8ed;
+  color: #1b7d3a;
+}
+
+.status-select.refused {
+  background-color: #fdecea;
+  color: #c62828;
+}
+
+.status-select:hover {
+  opacity: 0.9;
+}
+
+/**************** OVERLAY (fond noir foncé mobile) *********************/
+.overlay {
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+/**************** BLOQUER LE SCROLL QUAND MENU OUVERT *********************/
+body.menu-open {
+  overflow: hidden;
+}

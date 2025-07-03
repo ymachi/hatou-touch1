@@ -1,0 +1,33 @@
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #f1eeeb; /* léger rappel de la charte couleur */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.responsive-video {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+/******** TABLETTE ********/
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .responsive-video {
+    max-width: 50rem;
+  }
+}
+
+/******** DESKTOP ********/
+@media screen and (min-width: 1200px) {
+  .responsive-video {
+    max-width: 62.5rem;
+  }
+}

@@ -1,0 +1,86 @@
+.mobile-header {
+  background-color: #f1eeeb;
+  padding: 1rem;
+  position: relative;
+  z-index: 999;
+}
+
+.burger-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.burger-logo {
+  height: 40px;
+}
+
+.burger {
+  cursor: pointer;
+  width: 30px;
+  height: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  background-color: #73655c;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav {
+  display: none;
+  background-color: white;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.mobile-nav.show {
+  display: block;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 1rem;
+}
+
+.mobile-nav li {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.mobile-nav a {
+  text-decoration: none;
+  color: #73655c;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+.logout-btn:hover {
+  text-decoration: underline;
+}
+
+/* Cacher le menu burger pour écran >= 768px */
+@media screen and (min-width: 768px) {
+  .mobile-header,
+  .mobile-nav {
+    display: none;
+  }
+}

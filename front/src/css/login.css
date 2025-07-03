@@ -1,0 +1,119 @@
+/**************** TITRE ****************/
+.title-login {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #2c0a11;
+
+  width: fit-content;
+  margin: 2rem auto 2rem auto;
+  padding-bottom: 0.5rem;
+}
+
+/**************** CONTAINER ****************/
+.login-container {
+  padding: 2rem 1rem;
+  margin: auto;
+  max-width: 900px;
+}
+
+.login-box {
+  background-color: #f1eeeb;
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/**************** GRILLE FORM ****************/
+.login-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.login-field label {
+  display: block;
+  font-weight: 600;
+  color: #2c0a11;
+  margin-bottom: 0.5rem;
+}
+
+.login-field input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/**************** SUBMIT ****************/
+.login input[type="submit"] {
+  margin: 2.5rem auto 0 auto;
+  display: block;
+  width: 100%; /* 👈 ajoute ça */
+  background-color: #73655c;
+  color: white;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+.login input[type="submit"]:hover {
+  background-color: white;
+  color: #73655c;
+  border: 2px solid #73655c;
+}
+
+/**************** LIENS BAS ****************/
+.login-links {
+  margin-top: 2rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  text-align: left;
+  color: #2c0a11;
+}
+
+.login-links p {
+  margin: 0.5rem 0;
+}
+
+.login-links a {
+  color: #2c0a11;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/**************** RESPONSIVE ****************/
+@media screen and (min-width: 768px) {
+  .login-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .login input[type="submit"] {
+    font-size: 1.1rem;
+    padding: 1rem 4rem;
+  }
+
+  .login-links {
+    font-size: 1.05rem;
+    padding-left: 3rem;
+  }
+}
+
+
+/* Harmonisation des titres et textes sur la page de connexion */
+.login-box label,
+.login-box p,
+.login-box h1,
+.login-box h2,
+.login-box h3,
+.title-login,
+.login-links,
+.login-links a {
+  color: #73655C;
+}

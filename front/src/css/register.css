@@ -1,0 +1,187 @@
+/******************** TITRE HORS BLOC ********************/
+.title-inscription {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #2c0a11;
+  width: fit-content;
+  margin: 2rem auto 2rem auto;
+  padding-bottom: 0.5rem;
+}
+
+/******************** BLOC FORMULAIRE ********************/
+.register-box {
+  background-color: #f1eeeb;
+  border-radius: 12px;
+  padding: 2.5rem 1.5rem;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/******************** GRILLE DES INPUTS ********************/
+.parents-register {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .parents-register {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+/******************** INPUTS & LABELS ********************/
+.register label {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #2c0a11;
+}
+
+.register input {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 1.rem;
+  width: 100%;
+}
+
+.register input:focus {
+  border-color: #73655c;
+  outline: none;
+}
+
+/******************** VALIDATION MDP ********************/
+.verif {
+  margin-top: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #d6d3d1;
+  text-align: center;
+}
+
+.verif p {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #2c0a11;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+/******************** BOUTON SUBMIT ********************/
+.register input[type="submit"] {
+  margin: 2rem auto 0 auto;
+  display: block;
+  background-color: #73655c;
+  color: white;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.register input[type="submit"]:hover {
+  background-color: white;
+  color: #73655c;
+  border: 2px solid #73655c;
+}
+
+.rgpd-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0 1.5rem;
+}
+
+.rgpd-wrapper input[type="checkbox"] {
+  transform: scale(1.3);
+  accent-color: #73655c;
+  cursor: pointer;
+}
+
+.rgpd-label {
+  font-size: 1.4rem;
+  color: #73655c;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.rgpd-label a {
+  color: #73655c;
+  text-decoration: underline;
+}
+
+
+/******************** SECTION LIENS EN DEHORS DU BLOC ********************/
+.register-links {
+  width: 90%;
+  max-width: 900px;
+  margin: 1.5rem auto 4rem auto;
+  padding: 0 1rem;
+  font-size: 1rem;
+  text-align: left;
+  color: #2c0a11;
+}
+
+.register-links p {
+  margin: 0.3rem 0;
+}
+
+.register-links a {
+  color: #2c0a11;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/******************** RESPONSIVE (Desktop) ********************/
+@media screen and (min-width: 1024px) {
+  .title-inscription {
+    font-size: 2.5rem;
+  }
+
+  .register input {
+    font-size: 1.1rem;
+  }
+
+  .register input[type="submit"] {
+    font-size: 1.1rem;
+    padding: 1rem 4rem;
+  }
+
+  .register-links {
+    font-size: 1.05rem;
+    padding-left: 3rem;
+  }
+}
+
+
+/* Harmonisation des titres et textes sur la page d'inscription */
+.register-box label,
+.register-box p,
+.register-box h1,
+.register-box h2,
+.register-box h3,
+.title-inscription,
+.register-links,
+.register-links a,
+.verif p {
+  color: #73655C;
+}

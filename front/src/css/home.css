@@ -1,0 +1,175 @@
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: url("img/photo.JPG"); /* adapte le chemin */
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid #e1dcd5;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  line-height: 1.4;
+}
+
+.hero-btn {
+  background-color: #73655c;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  max-width: 90%;
+  width: 300px;
+}
+
+.hero-btn:hover {
+  background-color: #5d5048;
+}
+
+.description-section {
+  padding: 4rem 1.5rem;
+  background-color: #fff;
+  color: #3b302b;
+  text-align: center;
+}
+
+.description-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #3b302b;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+.underline {
+  width: 60px;
+  height: 4px;
+  background-color: #73655c;
+  margin: 0 auto 2rem auto;
+  border-radius: 2px;
+}
+
+/* Grand écran */
+@media (min-width: 768px) {
+  .underline {
+    width: 80px;
+    height: 5px;
+  }
+}
+
+.description-text {
+  font-size: 2rem;
+  line-height: 2;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: justify;
+}
+
+.menu {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.title-menu {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #3b302b;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  padding-bottom: 2rem;
+}
+
+.underline {
+  width: 60px;
+  height: 4px;
+  background-color: #73655c;
+  margin: 0 auto 2rem auto;
+  border-radius: 2px;
+}
+
+.img-menu {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin: 0 auto;
+}
+
+.cta-container {
+  text-align: center;
+  margin: 3rem auto;
+}
+
+
+
+/* Desktop */
+@media (min-width: 768px) {
+  .hero {
+    height: 450px;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-btn {
+    font-size: 1.3rem;
+    width: 320px;
+  }
+
+  .description-title {
+    font-size: 3rem;
+  }
+
+  .description-text {
+    font-size: 2rem;
+  }
+
+  .carte-menu {
+    font-size: 2.4rem;
+  }
+
+  .underline {
+    width: 80px;
+    height: 5px;
+  }
+
+  .img-menu {
+    max-width: 700px;
+  }
+}
+
+/* Harmonisation des couleurs de texte */
+.description-title,
+.description-text,
+.title-menu,
+.menu p,
+.cta-container p {
+  color: #73655C;
+}

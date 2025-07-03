@@ -1,0 +1,104 @@
+.title-cart,
+.title-delivery,
+.title-personal,
+.title-payments,
+.title-total{
+    padding-bottom: 2rem;
+    text-align: left;
+    
+}
+
+.cart,
+.delivery,
+.personal,
+.payments,
+.total{
+    background-color: #facfd5;
+    border-radius: 8px;
+    padding: 3rem;
+    margin: 1rem;
+   
+}
+
+.delivery form,
+.personal form,
+.payments form {
+   text-align: left;
+}
+
+.personal input[type="text"],
+.personal input[type="tel"],
+.personal input[type="email"]{
+     width: 100%;
+     border: 1px solid #facfd5 ;
+	  border-radius: 5px;
+	  padding: 2rem;
+	  margin-bottom: 2rem; 
+	  
+}
+
+.delivery input[type="text"],
+.delivery input[type="tel"],
+.delivery input[type="email"]{
+     width: 100%;
+     border: 1px solid #facfd5 ;
+	  border-radius: 5px;
+	  padding: 2rem;
+	  margin-bottom: 2rem; 
+}
+
+
+
+.total input[type="submit"]{
+    transition: all 1s;
+    width: 100%;
+    border: 1px solid #2c0a11 ;
+	 border-radius: 5px;
+	 margin: 3rem auto 0 auto;
+	 background-color: #2c0a11;
+	 color: white;
+	 text-transform: uppercase;
+	 padding: 1rem;
+}
+
+.total input[type="submit"]:hover{
+   background-color: white;
+   color: #2c0a11;
+   border: 2px solid #2c0a11;
+}
+
+.add-cart{
+   border: none;
+   background-color: transparent;
+}
+
+.add-cart:hover{
+   text-decoration: underline;
+   
+}
+/*************************** MÉDIAS QUERIES******************************/
+
+/************* TABLETTE  *************/
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    
+    .parents-cart{
+      display: grid;
+      grid-gap: 2rem;
+      padding: 3rem;
+      margin-bottom: 2rem;
+    }
+   
+   
+}
+
+/************* DESKTOP *************/
+@media screen and (min-width: 1200px){
+    .parents-cart{
+      display: grid;
+      grid-gap: 2rem;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
