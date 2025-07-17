@@ -6,14 +6,13 @@
 
 ## ✨ Fonctionnalités principales
 
-- Authentification sécurisée (inscription, connexion, gestion de session)
-- Catalogue de boxs salées, filtrées par catégories
+- Authentification sécurisée (inscription, connexion)
 - Galerie photo des réalisations
 - Formulaire complet de demande de devis
 - Interface d'administration pour gestion des demandes
 - Notification par mail lors de l’acceptation ou du refus d’un devis
 - Paiement d'acompte sécurisé via Stripe (prévu)
-- Page profil utilisateur avec historique des devis
+
 
 ---
 
