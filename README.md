@@ -34,7 +34,7 @@
 - Nodemailer (envoi de mails)
 
 ### Autres outils
-- JIRA (gestion du projet en Scrum)
+- JIRA (kanban)
 - Canva & Figma (design UI/UX)
 - Draw.io (modélisation UML)
 - VS Code
