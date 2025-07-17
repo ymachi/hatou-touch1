@@ -7,6 +7,9 @@ import './cssadmin/dashboard.css';
 const GalleryDashboard = () => {
   const [images, setImages] = useState([]);
   const [isDeleted, setIsDeleted] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [file, setFile] = useState(null);
+  const [alt, setAlt] = useState("");
 
   useEffect(() => {
     const fetchGallery = async () => {
@@ -36,6 +39,40 @@ const GalleryDashboard = () => {
     }
   };
 
+  const handleChange = (e) => {
+    if (e.target.name === "image") {
+      setFile(e.target.files[0]);
+    } else if (e.target.name === "alt") {
+      setAlt(e.target.value);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!file) {
+      toast.error("Veuillez choisir une image.");
+      return;
+    }
+
+    try {
+      const formData = new FormData();
+      formData.append("image", file);
+      formData.append("alt", alt);
+
+      const res = await axios.post("/api/gallery/new", formData, { headers: token() });
+
+      toast.success("Image ajoutée avec succès.");
+      setShowModal(false);
+      setFile(null);
+      setAlt("");
+      setIsDeleted(!isDeleted); // pour rafraîchir
+    } catch (e) {
+      console.log(e);
+      toast.error("Erreur lors de l'ajout de l'image.");
+    }
+  };
+
   return (
     <div className="admin-page">
       <main className="content">
@@ -43,9 +80,13 @@ const GalleryDashboard = () => {
           <article className="intro">
             <h1>Gestion des photos</h1>
             <p>
-              Ici, vous pouvez visualiser, ajouter ou supprimer les images de vos réalisations. Cliquez sur "Supprimer" pour retirer une image.
+              Ici, vous pouvez visualiser, ajouter ou supprimer les images de vos réalisations.
             </p>
+            <button className="add-btn" onClick={() => setShowModal(true)}>
+              + Ajouter une photo
+            </button>
           </article>
+
           <article className="orders">
             <table>
               <thead>
@@ -61,7 +102,6 @@ const GalleryDashboard = () => {
                     <td>
                       <img
                         src={`http://localhost:9000/img/${image.image.src}`}
-
                         alt={image.image.alt}
                         className="img-responsive-dashboard"
                       />
@@ -81,6 +121,26 @@ const GalleryDashboard = () => {
             </table>
           </article>
         </div>
+
+        {showModal && (
+          <div className="modal-overlay" onClick={() => setShowModal(false)}>
+            <div className="modal" onClick={(e) => e.stopPropagation()}>
+              <button className="close-btn" onClick={() => setShowModal(false)}>×</button>
+              <h2>Ajouter une image</h2>
+              <form onSubmit={handleSubmit} encType="multipart/form-data">
+                <div>
+                  <label htmlFor="image">Fichier image</label>
+                  <input type="file" name="image" id="image" onChange={handleChange} />
+                </div>
+                <div>
+                  <label htmlFor="alt">Texte alternatif</label>
+                  <input type="text" name="alt" id="alt" placeholder="ex: Plateau de bouchées salées" onChange={handleChange} />
+                </div>
+                <button type="submit" className="submit-btn">Ajouter</button>
+              </form>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );

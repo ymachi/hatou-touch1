@@ -1,18 +1,20 @@
-// models/index.js
-
 import sequelize from "../config/sequelize.js";
 import Comment from "./comment.model.js";
 import User from "./user.model.js";
 
-// Ajoute ici d'autres modèles SQL si tu en ajoutes plus tard
+// déclaration des relations
+User.hasMany(Comment, { foreignKey: "userId", onDelete: "CASCADE" });
+Comment.belongsTo(User, { foreignKey: "userId" });
+
 
 const syncModels = async () => {
   try {
-    await User.sync();
-    await Comment.sync(); 
+    await sequelize.sync(); // Cela synchronise tous les modèles associés
+    console.log(" Modèles synchronisés avec succès.");
   } catch (error) {
-    console.error(" Erreur de synchronisation :", error);
+    console.error("Erreur de synchronisation :", error);
   }
 };
+
 
 export { sequelize, User, Comment, syncModels };

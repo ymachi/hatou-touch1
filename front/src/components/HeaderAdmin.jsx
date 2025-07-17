@@ -42,18 +42,15 @@ const HeaderAdmin = () => {
           <img className="logo" src="/logoHTT.png" alt="logo" />
           <nav className="viewer-admin">
             <NavLink className="link-admin" to="/admin/boxs/dashboard">Gestion des box</NavLink>
-            <NavLink className="link-admin" to="/admin/boxs/ajouter-box/">Ajouter une box</NavLink>
             <NavLink className="link-admin" to="/admin/clients/dashboard">Gestion des clients</NavLink>
-            <NavLink className="link-admin" to="/admin/commandes/dashboard">Gestion des commandes</NavLink>
             <NavLink className="link-admin" to="/admin/devis/dashboard">Gestion des devis</NavLink>
             <NavLink className="link-admin" to="/admin/gallery/dashboard">Gestion des photos</NavLink>
-            <NavLink className="link-admin" to="/admin/gallery/ajouter-photo">Ajouter une photo</NavLink>
             <NavLink className="link-admin" to="/admin/avis/dashboard">Gestion des avis</NavLink>
 
-            {/* Bouton de retour sans déconnexion */}
+            {/* bouton de retour sans déconnexion */}
             <NavLink className="link-admin retour" to="/">↩️</NavLink>
 
-            {/* Bouton de déconnexion */}
+            {/* bouton de déconnexion */}
             {user && user.token ? (
               <NavLink className="link-admin" to="/" onClick={handleLogout}>
                 Se déconnecter

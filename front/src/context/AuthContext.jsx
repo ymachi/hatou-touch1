@@ -1,5 +1,4 @@
 import { createContext, useState, useEffect, useContext } from "react";
-import { toast } from "react-toastify";
 import axios from "axios";
 
 export const AuthContext = createContext(null);
@@ -17,7 +16,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     setUser(null);
-    toast.info("Vous avez été déconnecté.");
+
   };
 
   useEffect(() => {

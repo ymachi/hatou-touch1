@@ -27,7 +27,7 @@ export const isLogged = (req, res, next) => {
 
 export const isAuthorized = (roles) => {
   return async (req, res, next) => {
-    const user = await User.findByPk(req.userId); // ⚠️ findById -> findByPk
+    const user = await User.findByPk(req.userId);
 
     if (!user) {
       return res.status(404).json({ message: "Utilisateur introuvable" });

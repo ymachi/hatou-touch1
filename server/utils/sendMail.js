@@ -12,7 +12,7 @@ export const sendStatusEmail = async ({ email, firstname, status, estimate }) =>
   });
 
   const isAccepted = status === "accepted";
-  const statusText = isAccepted ? "acceptée ✅" : "refusée ❌";
+  const statusText = isAccepted ? "acceptée " : "refusée ";
 
   const html = `
     <p>Bonjour ${firstname},</p>

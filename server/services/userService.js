@@ -19,14 +19,13 @@ export const registerUser = async ({ lastname, firstname, email, password, tel, 
   if (!checkPwd.test(password)) {
     throw new Error("Le mot de passe choisi ne respecte pas les conditions.");
   }
-console.log("Mot de passe APRES hash :", hashedPassword);
-  const hashedPassword = await bcrypt.hash(password, 10);
 
+  
   const newUser = await User.create({
     lastname,
     firstname,
     email,
-    password: hashedPassword,
+    password, 
     tel,
     address,
   });
@@ -40,7 +39,8 @@ export const loginUser = async ({ email, password }) => {
   if (!user) {
     throw new Error("Aucun utilisateur enregistré avec cet email.");
   }
-console.log("Mot de passe saisi :", password);
+
+  console.log("Mot de passe saisi :", password);
   console.log("Mot de passe enregistré (hashé) :", user.password);
 
   const isValidPwd = await bcrypt.compare(password, user.password);

@@ -28,7 +28,6 @@ const Login = () => {
       auth.login(res.data);
       setTimeout(() => navigate("/"), 2000);
     } catch (e) {
-      console.log(e)
       toast.error(e.response?.data?.message || "Erreur lors de la connexion.");
     }
   };

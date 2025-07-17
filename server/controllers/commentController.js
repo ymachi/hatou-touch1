@@ -28,33 +28,20 @@ export const addComment = async (req, res) => {
 // pour récupérer tous les avis avec nom et prénom du user
 export const getAllComments = async (req, res) => {
    try {
-      const comments = await Comment.findAll();
+      const comments = await Comment.findAll({
+         include: {
+            model: User,
+            attributes: ["firstname", "lastname"]
+         },
+         order: [['createdAt', 'DESC']]
+      });
 
-      const enrichedComments = await Promise.all(
-         comments.map(async (comment) => {
-            try {
-               const user = await User.findById(comment.userId).select("firstname lastname");
-               return {
-                  ...comment.toJSON(),
-                  firstname: user?.firstname || "Utilisateur",
-                  lastname: user?.lastname || "Anonyme"
-               };
-            } catch (e) {
-               return {
-                  ...comment.toJSON(),
-                  firstname: "Utilisateur",
-                  lastname: "Inconnu"
-               };
-            }
-         })
-      );
-
-      res.status(200).json(enrichedComments);
+      res.status(200).json(comments);
    } catch (e) {
-      console.log(e);
       res.status(400).json({ message: "Impossible de récupérer les avis." });
    }
 };
+
 
 // pour supprimer un avis
 export const deleteComment = async (req, res) => {

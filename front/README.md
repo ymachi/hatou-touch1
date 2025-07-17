@@ -2,9 +2,7 @@
 
 **Hatou'Touch** est une plateforme web de commandes de boxs salées sur mesure, pensée pour répondre aux besoins d'événements privés ou professionnels. À travers une interface intuitive et épurée, les utilisateurs peuvent découvrir les créations de l'entreprise, soumettre une demande de devis, et gérer leur historique personnel. Le projet repose sur une architecture complète (frontend, backend, base de données) et est actuellement en développement.
 
----
-
-## ✨ Fonctionnalités principales
+## Fonctionnalités principales
 
 - Authentification sécurisée (inscription, connexion, gestion de session)
 - Catalogue de boxs salées, filtrées par catégories
@@ -15,9 +13,7 @@
 - Paiement d'acompte sécurisé via Stripe (prévu)
 - Page profil utilisateur avec historique des devis
 
----
-
-## 🧩 Technologies utilisées
+## Technologies utilisées
 
 ### Frontend
 - React.js
@@ -30,8 +26,7 @@
 ### Backend
 - Node.js
 - Express.js
-- Sequelize (MySQL pour les utilisateurs et les avis)
-- Mongoose (MongoDB pour les devis, contacts et galeries)
+- Sequelize (avec MySQL pour les avis)
 - Nodemailer (envoi de mails)
 
 ### Autres outils
@@ -40,9 +35,7 @@
 - Draw.io (modélisation UML)
 - VS Code
 
----
-
-## 🎨 Charte graphique
+## Charte graphique
 
 ### Couleurs
 - Fond principal : `#f1eeeb`  
@@ -50,31 +43,6 @@
 - Texte et boutons : `#73655c`
 
 ### Typographie
-- Titres : **Alegreya Bold**  
-- Texte courant : **Alegreya Regular**
+- Titres : Alegreya Bold  
+- Texte courant : Alegreya Regular
 
----
-
-## 🐳 Dockerisation
-
-L’application backend a été dockerisée pour faciliter l’installation et l’exécution dans un environnement isolé.
-
-### Docker Compose
-
-Un fichier `docker-compose.yml` permet de lancer en un clic :
-- Le serveur Node.js (`/server`)
-- MongoDB (pour les devis, les messages et la galerie)
-- MySQL (pour les utilisateurs et les avis)
-
-```bash
-# Lancer tous les services
-docker-compose up --build
-
-## 📁 Arborescence simplifiée
-HatouTouch1/
-├── front/             # Frontend React
-├── server/            # Backend Node.js + Express
-├── docker-compose.yml
-├── .env
-├── .gitignore
-└── README.md

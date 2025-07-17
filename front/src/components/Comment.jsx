@@ -13,7 +13,7 @@ const Comment = () => {
         rating: 0
     });
     const [comments, setComments] = useState([]);
-    const [thankYou, setThankYou] = useState(false); // 🆕
+    const [thankYou, setThankYou] = useState(false); 
 
     useEffect(() => {
         const fetchComments = async () => {
@@ -86,7 +86,12 @@ const Comment = () => {
                             comment && comment.content ? (
                                 <article className="comment" key={index}>
                                     <Stars rating={comment.rating} setRating={() => {}} />
-                                    <p><strong>{comment.firstname} {comment.lastname}</strong></p>
+                                    <p>
+                                        <strong>
+                                            {comment.User?.firstname || "Utilisateur"}{" "}
+                                            {comment.User?.lastname ? comment.User.lastname.charAt(0) + "." : ""}
+                                        </strong>
+                                    </p>
                                     <p>{comment.content}</p>
                                     <p>{new Date(comment.createdAt).toLocaleString()}</p>
                                 </article>

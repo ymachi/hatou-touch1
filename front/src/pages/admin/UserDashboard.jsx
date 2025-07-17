@@ -41,7 +41,7 @@ const UserDashboard = () => {
       const res = await axios.put(`/api/users/change-role/${id}`, { role }, { headers: token() });
       setUsers((prevUsers) =>
         prevUsers.map((user) =>
-          user._id === id ? { ...user, role } : user
+          user.id === id ? { ...user, role } : user
         )
       );
       toast.success(res.data.message);
@@ -75,23 +75,27 @@ const UserDashboard = () => {
               </thead>
               <tbody>
                 {users.map((user) => (
-                  <tr key={user._id}>
+                  <tr key={user.id}>
                     <td>{user.lastname}</td>
                     <td>{user.firstname}</td>
                     <td>{user.email}</td>
                     <td>{user.tel}</td>
                     <td>{user.address}</td>
                     <td>
-                      <select
-                        value={user.role}
-                        onChange={(e) => handleRoleChange(user._id, e.target.value)}
-                      >
-                        <option value="user">Utilisateur</option>
-                        <option value="admin">Administrateur</option>
-                      </select>
+                      <span className={`badge-role ${user.role}`}>
+                        {user.role === "admin" ? "Administrateur" : "Utilisateur"}
+                      </span>
+                      {user.role !== "admin" && (
+                        <button
+                          className="button-action small"
+                          onClick={() => handleRoleChange(user.id, "admin")}
+                        >
+                          Promouvoir admin
+                        </button>
+                      )}
                     </td>
                     <td>
-                      <button className="button-action" onClick={() => handleDelete(user._id)}>
+                      <button className="button-action" onClick={() => handleDelete(user.id)}>
                         Supprimer
                       </button>
                     </td>
